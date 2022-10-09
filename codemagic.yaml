@@ -1,0 +1,17 @@
+workflows:
+  android-kmm-workflow:
+    name: Android KMM Workflow
+    max_build_duration: 120
+    instance_type: mac_mini_m1
+    environment:
+      vars:
+        PACKAGE_NAME: "com.codemagickmm.android" # <-- Use your package name
+    scripts:
+      - name: Build apk Android app
+        script: |
+          cd androidApp
+          gradle assembleRelease
+    artifacts:
+      - androidApp/build/outputs/**/**/*.apk
+      #- androidApp/build/outputs/**/**/*.apk
+
