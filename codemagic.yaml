@@ -10,7 +10,7 @@ workflows:
       - name: Build apk Android app
         script: |
           cd androidApp
-          gradle assembleRelease
+          ./gradlew assembleRelease
     artifacts:
       - androidApp/build/outputs/**/**/*.apk
       #- androidApp/build/outputs/**/**/*.apk
